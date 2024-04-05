@@ -76,7 +76,7 @@ type Plugin struct {
 
 // NewPlugin creates a new Plugin
 func NewPlugin(awaitTimeout time.Duration) (*Plugin, error) {
-	client, err := docker.NewClient("unix:///run/docker.sock", "v1.13.1", nil, nil)
+	client, err := docker.NewClient("unix:///run/docker.sock", "v1.24", nil, nil)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create docker client: %w", err)
 	}
