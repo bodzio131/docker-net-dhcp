@@ -14,8 +14,8 @@ import (
 	"github.com/vishvananda/netns"
 	"golang.org/x/sys/unix"
 
-	"github.com/devplayer0/docker-net-dhcp/pkg/udhcpc"
-	"github.com/devplayer0/docker-net-dhcp/pkg/util"
+	"github.com/bodzio131/docker-net-dhcp/pkg/udhcpc"
+	"github.com/bodzio131/docker-net-dhcp/pkg/util"
 )
 
 const pollTime = 100 * time.Millisecond
