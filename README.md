@@ -202,3 +202,4 @@ this point `udhcpc` must be stopped
 5. `net-dhcp` starts `udhcpc` on the container end of the `veth` pair in the container's **network namespace** (but
 still in the plugin **PID namespace** - this means that the container can't see the DHCP client)
 6. `udhcpc` continues to run, renewing the lease when required, until the container shuts down
+   
