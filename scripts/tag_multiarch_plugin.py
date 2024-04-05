@@ -32,7 +32,7 @@ def main():
 
     print(f'Re-tagging {args.image} as {without_tag}:{new_tag}')
     mf = reg.get_manifest(old_tag)
-    reg.set_manifest(new_tag, mf, mime=MTYPE_MANIFEST_LIST)
+    reg.set_manifest(new_tag, mf, mime=MTYPE_MANIFEST)
 
 if __name__ == '__main__':
     main()
