@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -25,7 +25,7 @@ jobs:
       - id: vars
         name: Generate release vars
         run: |
-          echo "::set-output name=version::"$(echo "${{ github.ref }}" | sed -r 's|refs/tags/v(.+)|\1|')""
+          echo "version="$(echo "${{ github.ref }}" | sed -r 's|refs/tags/v(.+)|\1|')"" >> $GITHUB_OUTPUT
           echo "Changelog: " > release.md
           git log --pretty=format:" - %s" "$(git describe --tags --abbrev=0 ${{ github.event.ref }}^)"..${{ github.event.ref }} >> release.md
 

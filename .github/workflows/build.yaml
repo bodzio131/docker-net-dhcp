@@ -29,7 +29,7 @@ jobs:
         name: Generate build vars
         run: |
           SHA="${{ github.sha }}"
-          echo "::set-output name=tag::"${SHA:0:8}-$(date +%s)Z""
+          echo "tag="${SHA:0:8}-$(date +%s)Z"" >> $GITHUB_OUTPUT
 
       - name: Build
         run: make PLUGIN_TAG=${{ steps.vars.outputs.tag }} multiarch
