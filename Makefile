@@ -45,7 +45,6 @@ push: create
 
 multiarch: $(SOURCES)
 	docker buildx build --platform=$(PLATFORMS) -o type=local,dest=$@ .
-	$(wildcard $@)
 
 push-multiarch: multiarch config.json
 	scripts/push_multiarch_plugin.py -p $(PLATFORMS) config.json multiarch $(PLUGIN_NAME):$(PLUGIN_TAG)
